@@ -44,7 +44,6 @@ const App = () => {
                                         cursor: 'pointer',
                                         margin: '12px'
                                     }}
-                                    onClick={() => console.log('oi')}
                                     to={{
                                         pathname: `/cdd/${cdd.name}`,
                                         cdd
@@ -66,13 +65,9 @@ const App = () => {
                     )}
                 </ul>
             </div>
-            {/* <h1>Veículos próximos</h1>
-            <ul style={{ marginBottom: '28px' }}>
-                <p>
-                    {'<'}mapa c/ veículos{'>'}
-                </p>
-            </ul> */}
-            <button>Nova venda</button>
+            <Link to='/venda'>
+                <button>Nova venda</button>
+            </Link>
         </div>
     );
 };

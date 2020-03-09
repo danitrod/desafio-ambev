@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
-import styles from './cdd.module.css';
+import styles from './CDD.module.css';
 import { useParams, useLocation } from 'react-router-dom';
+import Catalog from '../../constants/products.json';
+import Product from '../product/Product';
 
 const CDD = () => {
     const props = useLocation();
@@ -9,13 +11,13 @@ const CDD = () => {
     const [incomingBrews, setIncomingBrews] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [brews, setBrews] = useState(props.cdd.brews);
+    const [catalog, setCatalog] = useState(Catalog.products);
 
     useEffect(() => {
         const fetchIncomingBrews = async () => {
             const response = await api.post('/brewery/find', {
                 cddName: params.name
             });
-            console.log(response.data);
             if (response.data.err === false) {
                 setIncomingBrews(response.data.brews);
             }
@@ -25,45 +27,75 @@ const CDD = () => {
 
     const searchHandler = e => {
         setSearchValue(e.target.value);
-        brews = brews.filter();
+        setBrews(
+            props.cdd.brews.filter(product =>
+                product.name
+                    .toLowerCase()
+                    .includes(e.target.value.toLowerCase())
+            )
+        );
+        setCatalog(
+            Catalog.products.filter(product =>
+                product.name
+                    .toLowerCase()
+                    .includes(e.target.value.toLowerCase())
+            )
+        );
     };
 
     return (
         <div className={'container ' + styles.catalog}>
+            <h1>Centro de distribuição {params.name}</h1>
             <input
                 placeholder='Buscar produto'
                 value={searchValue}
                 onChange={searchHandler}
             />
-            <h1>Centro de distribuição {params.name}</h1>
             <ul>
-                {brews.map(product => {
+                {brews.map(brew => {
+                    const [product] = Catalog.products.filter(
+                        product => product.name === brew.name
+                    );
+                    if (product) {
+                        let incoming = [];
+                        if (incomingBrews.length > 0) {
+                            incoming = incomingBrews.filter(
+                                incomingBrew =>
+                                    incomingBrew.type === product.name
+                            );
+                        }
+                        return (
+                            <Product
+                                key={product.name}
+                                available
+                                product={product}
+                                quantity={brew.quantity}
+                                incoming={incoming}
+                            />
+                        );
+                    }
+                    return null;
+                })}
+                {catalog.map(product => {
                     let incoming = [];
-                    console.log(incomingBrews, product.name);
-                    if (incomingBrews) {
+                    if (incomingBrews.length > 0) {
                         incoming = incomingBrews.filter(
                             incomingBrew => incomingBrew.type === product.name
                         );
                     }
-                    console.log(incoming);
-                    return (
-                        <li key={product.name}>
-                            (fotinho)
-                            <br />
-                            {product.name}
-                            <br />
-                            In stock: {product.quantity}
-                            <br />
-                            Incoming:
-                            {incoming.map(brew => {
-                                return (
-                                    <>
-                                        {brew.dueDate} {brew.distance}km
-                                    </>
-                                );
-                            })}
-                        </li>
+                    const available = brews.filter(
+                        brew => product.name === brew.name
                     );
+                    if (available.length === 0) {
+                        return (
+                            <Product
+                                key={product.name}
+                                product={product}
+                                incoming={incoming}
+                            />
+                        );
+                    }
+                    return null;
                 })}
             </ul>
         </div>

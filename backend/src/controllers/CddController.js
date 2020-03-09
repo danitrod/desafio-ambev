@@ -16,38 +16,56 @@ module.exports = {
                     {
                         name: 'Osasco',
                         distance: 5,
-                        brews: [{ name: 'Skol', quantity: 1320, imageURL: '' }]
+                        brews: [
+                            { name: 'Skol 1L', quantity: 1320, imageURL: '' }
+                        ]
                     },
                     {
                         name: 'Santo Amaro',
                         distance: 13,
                         brews: [
-                            { name: 'Bohemia', quantity: 600, imageURL: '' },
-                            { name: 'Budweiser', quantity: 300, imageURL: '' }
+                            {
+                                name: 'Bohemia 300ml',
+                                quantity: 600,
+                                imageURL: ''
+                            },
+                            {
+                                name: 'Budweiser 300ml',
+                                quantity: 300,
+                                imageURL: ''
+                            }
                         ]
                     },
                     {
                         name: 'Parelheiros',
                         distance: 15,
                         brews: [
-                            { name: 'Brahma', quantity: 120, imageURL: '' },
-                            { name: 'Skol', quantity: 1320, imageURL: '' }
+                            { name: 'Brahma 300ml', quantity: 120, imageURL: '' },
+                            { name: 'Skol 1L', quantity: 1320, imageURL: '' }
                         ]
                     },
                     {
                         name: 'Cantinho',
                         distance: 25,
                         brews: [
-                            { name: 'Budweiser', quantity: 300, imageURL: '' },
-                            { name: 'Skol', quantity: 1320, imageURL: '' }
+                            {
+                                name: 'Budweiser 300ml',
+                                quantity: 300,
+                                imageURL: ''
+                            },
+                            { name: 'Skol 1L', quantity: 1320, imageURL: '' }
                         ]
                     },
                     {
                         name: 'Azerbaijao',
                         distance: 5000,
                         brews: [
-                            { name: 'Original', quantity: 500, imageURL: '' },
-                            { name: 'Skol', quantity: 1320, imageURL: '' }
+                            {
+                                name: 'Original 600ml',
+                                quantity: 500,
+                                imageURL: ''
+                            },
+                            { name: 'Skol 300ml', quantity: 1320, imageURL: '' }
                         ]
                     }
                 ]

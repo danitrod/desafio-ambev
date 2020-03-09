@@ -1,0 +1,26 @@
+{
+    "products": [
+        {
+            "name": "Budweiser 300ml",
+            "price": "R$ 2,20",
+            "logo": "logo_budweiser.jpg"
+        },
+        {
+            "name": "Original 600ml",
+            "price": "R$ 3,70",
+            "logo": "logo_original.jpg"
+        },
+        {
+            "name": "Bohemia 300ml",
+            "price": "R$ 1,80",
+            "logo": "logo_bohemia.jpg"
+        },
+        {
+            "name": "Brahma 300ml",
+            "price": "R$ 1,30",
+            "logo": "logo_brahma.jpg"
+        },
+        { "name": "Skol 1L", "price": "R$ 6,00", "logo": "logo_skol.jpg" },
+        { "name": "Skol 300ml", "price": "R$ 1,20", "logo": "logo_skol.jpg" }
+    ]
+}
