@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './components/header/Header';
+import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
-import Form from './components/form/Form';
+import Recommendation from './components/recommendation/Recommendation';
 import CDD from './components/cdd/CDD';
 
 const Routes = () => {
     return (
         <BrowserRouter>
-            <Header />
+            <Navbar />
             <Switch>
                 <Route path='/cdd/:name'>
                     <CDD />
                 </Route>
                 <Route path='/venda'>
-                    <Form />
+                    <Recommendation />
                 </Route>
                 <Route path='/'>
                     <Home />

@@ -39,13 +39,11 @@ module.exports = {
             brews: [
                 {
                     dueDate: new Date('2020-04-02T04:32:00'),
-                    type: 'Skol 1L',
                     brew: { name: 'Skol 1L', quantity: 600, imageURL: '' },
                     distance: 54
                 },
                 {
                     dueDate: new Date('2020-04-03T08:32:00'),
-                    type: 'Budweiser 300ml',
                     brew: {
                         name: 'Budweiser 300ml',
                         quantity: 700,
@@ -55,13 +53,11 @@ module.exports = {
                 },
                 {
                     dueDate: new Date('2020-04-04T12:32:00'),
-                    type: 'Brahma 300ml',
                     brew: { name: 'Brahma 300ml', quantity: 700, imageURL: '' },
                     distance: 54
                 },
                 {
                     dueDate: new Date('2020-04-04T23:32:00'),
-                    type: 'Bohemia 300ml',
                     brew: {
                         name: 'Bohemia 300ml',
                         quantity: 700,

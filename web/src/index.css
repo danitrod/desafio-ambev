@@ -25,16 +25,20 @@ button {
   font-weight: 800;
   padding: 16px 32px;
   border: none;
-  background-color: #aaa;
+  background-color: #ba0c2f;
+  color: #fff;
   border-radius: 12px;
   cursor: pointer;
   transition: ease 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
-  background-color: #ccc;
+  background-color: #920e25;
 }
 
 button:active {
-  background-color: #999;
+  background-color: #6f111c;
 }

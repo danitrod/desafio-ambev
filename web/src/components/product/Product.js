@@ -25,7 +25,7 @@ const Product = props => {
                         return (
                             <div key={p.dueDate}>
                                 {formatDate(p.dueDate)} - {p.distance}km
-                                distante
+                                distante - {p.brew.quantity} unidades
                             </div>
                         );
                     })}

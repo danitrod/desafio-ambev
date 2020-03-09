@@ -1,0 +1,69 @@
+.container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.form {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ccc;
+    padding-right: 32px;
+}
+
+.form p {
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 22px;
+}
+
+.select select {
+    width: 134px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    height: 34px;
+    margin: 4px;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right rgb(245, 245, 245);
+    -webkit-appearance: none;
+    background-position-x: 110px;
+}
+
+.select select:last-child {
+    width: 276px;
+    background-position-x: 252px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.recommendation {
+    width: 100%;
+    flex: 1;
+    height: 100%;
+    padding-left: 32px;
+}
+
+.mixes {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

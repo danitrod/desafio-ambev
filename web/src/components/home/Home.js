@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import Header from '../header/Header';
 import DistributionIcon from '../../assets/icons/distribution.svg';
 import LoadingSpinner from '../../assets/loader.svg';
 
@@ -29,46 +30,50 @@ const App = () => {
     }, []);
 
     return (
-        <div className='container'>
-            <div className='cdds'>
-                <h2>Centros de distribuição próximos</h2>
-                <ul style={{ marginBottom: '28px' }}>
-                    {cdds.length > 0 ? (
-                        cdds.map(cdd => {
-                            return (
-                                <Link
-                                    key={cdd.name}
-                                    style={{
-                                        textDecoration: 'none',
-                                        color: '#000',
-                                        cursor: 'pointer',
-                                        margin: '12px'
-                                    }}
-                                    to={{
-                                        pathname: `/cdd/${cdd.name}`,
-                                        cdd
-                                    }}
-                                >
-                                    <li>
-                                        <img
-                                            src={DistributionIcon}
-                                            alt='Distribuição'
-                                        />
-                                        <h4>{cdd.name}</h4>{' '}
-                                        <p>A {cdd.distance}km de distância</p>
-                                    </li>
-                                </Link>
-                            );
-                        })
-                    ) : (
-                        <img src={LoadingSpinner} alt='loading' />
-                    )}
-                </ul>
+        <>
+            <Header title='Centros de distribuição próximos' />
+            <div className='container'>
+                <div className='cdds'>
+                    <ul style={{ marginBottom: '28px' }}>
+                        {cdds.length > 0 ? (
+                            cdds.map(cdd => {
+                                return (
+                                    <Link
+                                        key={cdd.name}
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: '#000',
+                                            cursor: 'pointer',
+                                            margin: '12px'
+                                        }}
+                                        to={{
+                                            pathname: `/cdd/${cdd.name}`,
+                                            cdd
+                                        }}
+                                    >
+                                        <li>
+                                            <img
+                                                src={DistributionIcon}
+                                                alt='Distribuição'
+                                            />
+                                            <h4>{cdd.name}</h4>{' '}
+                                            <p>
+                                                A {cdd.distance}km de distância
+                                            </p>
+                                        </li>
+                                    </Link>
+                                );
+                            })
+                        ) : (
+                            <img src={LoadingSpinner} alt='loading' />
+                        )}
+                    </ul>
+                </div>
+                <Link to='/venda' style={{ textDecoration: 'none' }}>
+                    <button>Nova venda</button>
+                </Link>
             </div>
-            <Link to='/venda'>
-                <button>Nova venda</button>
-            </Link>
-        </div>
+        </>
     );
 };
 

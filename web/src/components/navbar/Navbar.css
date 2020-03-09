@@ -1,9 +1,10 @@
-.header {
-    background-color: #777;
+.navbar {
+    background-color: #ba0c2f;
+    color: #fff;
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 32px;
 }
