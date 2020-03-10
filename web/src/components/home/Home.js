@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import Header from '../header/Header';
 import DistributionIcon from '../../assets/icons/distribution.svg';
 import LoadingSpinner from '../../assets/loader.svg';
+import Banner from '../../assets/img/banner-2.jpg';
+import MapImg from '../../assets/img/map.png';
+import DeliveryStatus from '../../assets/img/delivery.png';
 
 const App = () => {
     const [cdds, setCdds] = useState([]);
@@ -32,6 +35,11 @@ const App = () => {
     return (
         <>
             <Header title='Centros de distribuição próximos' />
+            <img
+                className='banner'
+                src={Banner}
+                alt='banner juntos por um mundo melhor'
+            />
             <div className='container'>
                 <div className='cdds'>
                     <ul style={{ marginBottom: '28px' }}>
@@ -70,8 +78,26 @@ const App = () => {
                     </ul>
                 </div>
                 <Link to='/venda' style={{ textDecoration: 'none' }}>
-                    <button>Nova venda</button>
+                    <button className='orng'>Nova venda</button>
                 </Link>
+                <hr
+                    style={{
+                        backgroundColor: '#fff',
+                        color: '#fff',
+                        border: '1px solid #eee',
+                        width: '75%',
+                        margin: '16px 0'
+                    }}
+                />
+                <h3 className='deliveryh'>Veículos para entrega próximos</h3>
+                <div className='map-view'>
+                    <img className='map' src={MapImg} alt='map' />
+                    <img
+                        className='status'
+                        src={DeliveryStatus}
+                        alt='delivery'
+                    />
+                </div>
             </div>
         </>
     );

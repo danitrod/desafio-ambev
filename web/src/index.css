@@ -42,3 +42,15 @@ button:hover {
 button:active {
   background-color: #6f111c;
 }
+
+.orng {
+  background-color: rgb(214, 81, 1);
+}
+
+.orng:hover {
+  background-color: rgb(224, 91, 11);
+}
+
+.orng:active {
+  background-color: rgb(194, 61, 1);
+}

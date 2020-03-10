@@ -1,16 +1,26 @@
-const formatDate = date => {
-    const day = date.getDate().toString(),
-        dayF = day.length === 1 ? '0' + day : day,
-        month = (date.getMonth() + 1).toString(),
-        monthF = month.length === 1 ? '0' + month : month,
-        yearF = date.getFullYear(),
-        hour = date.getHours().toString(),
-        hourF = hour.length === 1 ? '0' + hour : hour,
-        min = date.getMinutes().toString(),
-        minF = min.length === 1 ? '0' + min : min;
-    return dayF + '/' + monthF + '/' + yearF + ', ' + hourF + ':' + minF;
+const temp = [
+    {
+        name: 'Test1',
+        price: 1
+    },
+    {
+        name: 'Test2',
+        price: 2
+    },
+    {
+        name: 'Test3',
+        price: 3
+    },
+    {
+        name: 'Test4',
+        price: 4
+    }
+];
+
+const t2 = {
+    name: 'Test3'
 };
 
-console.log(formatDate(new Date('2011-05-01T09:32:02')));
-// const test = new Date();
-// test.get;
+const [obj] = temp.filter(t => t.name === t2.name);
+
+console.log(obj.price);

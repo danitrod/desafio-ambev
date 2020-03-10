@@ -1,10 +1,11 @@
 import React from 'react';
 import './Navbar.css';
+import AmbevLogo from '../../assets/img/logo-ambev.png';
 
 const Header = () => {
     return (
         <nav className='navbar'>
-            <h1>SalesPartner</h1>
+            <img src={AmbevLogo} alt='logo-ambev' />
         </nav>
     );
 };

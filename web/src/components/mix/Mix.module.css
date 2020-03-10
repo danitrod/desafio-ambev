@@ -21,3 +21,13 @@
     font-size: 16px;
     background-color: rgb(13, 189, 13);
 }
+
+.data {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.mix h3 {
+    margin: 32px 0;
+}
