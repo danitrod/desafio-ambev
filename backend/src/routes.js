@@ -5,9 +5,8 @@ const BreweryController = require('./controllers/BreweryController');
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
-    console.log('GET /');
-    return res.send('<h1>running</h1>');
+routes.get('/venda', (_, res) => {
+    res.redirect('/');
 });
 
 routes.post('/recommend', async (req, res) => {

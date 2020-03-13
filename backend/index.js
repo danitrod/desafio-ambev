@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
-const routes = require('./routes');
+const routes = require('./src/routes');
 const colors = require('colors/safe');
-const cors = require('cors');
+const { join } = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -19,9 +19,9 @@ mongoose.connect(
         if (err) {
             console.error(colors.red('App initialization failed:'), err);
         } else {
-            app.use(cors());
             app.use(express.json());
             app.use(routes);
+            app.use(express.static(join(__dirname, 'build')));
 
             const port = process.env.PORT || 5000;
 

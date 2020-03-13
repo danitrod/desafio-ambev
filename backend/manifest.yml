@@ -1,0 +1,9 @@
+---
+applications:
+- name: salespartner
+  path: .
+  memory: 128M
+  command: node index.js
+  routes:
+  - route: salespartner.mybluemix.net
+  instances: 1

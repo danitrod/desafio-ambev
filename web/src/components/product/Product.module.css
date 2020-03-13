@@ -4,6 +4,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 32px;
+    max-height: 464px;
+    max-width: 414px;
     border: 1px solid #333;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }

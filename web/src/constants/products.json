@@ -1,27 +1,21 @@
 {
     "products": [
-        {
-            "name": "Budweiser 300ml",
-            "price": 2.2,
-            "logo": "logo_budweiser.jpg"
-        },
-        {
-            "name": "Original 600ml",
-            "price": 3.7,
-            "logo": "logo_original.jpg"
-        },
-        {
-            "name": "Bohemia 300ml",
-            "price": 1.8,
-            "logo": "logo_bohemia.jpg"
-        },
-        {
-            "name": "Brahma 300ml",
-            "price": 1.3,
-            "logo": "logo_brahma.jpg"
-        },
-        { "name": "Skol 1L", "price": 6, "logo": "logo_skol.jpg" },
-        { "name": "Skol 300ml", "price": 1.2, "logo": "logo_skol.jpg" },
-        { "name": "Brahma 1L", "price": 5.5, "logo": "logo_brahma.jpg" }
+        { "name": "Budweiser 350 ml", "price": 1, "logo": "logo_budweiser.jpg" },
+        { "name": "Budweiser 473 ml", "price": 1, "logo": "logo_budweiser.jpg" },
+        { "name": "Budweiser 600 ml", "price": 1, "logo": "logo_budweiser.jpg" },
+        { "name": "Brahma Refresh 1L", "price": 1, "logo": "logo_brahmaref.jpg" },
+        { "name": "Brahma 0% 350 ml", "price": 1, "logo": "logo_brahma0.jpg" },
+        { "name": "Skol Pilsen 1L", "price": 1, "logo": "logo_skol.jpg" },
+        { "name": "Corona  355 ml", "price": 1, "logo": "logo_corona.jpg" },
+        { "name": "Stella Artois 550 ml", "price": 1, "logo": "logo_stella.jpg" },
+        { "name": "Baré  2L", "price": 1, "logo": "logo_bare.jpg" },
+        { "name": "Pepsi 2L", "price": 1, "logo": "logo_pepsi.jpg" },
+        { "name": "Soda 350 ml", "price": 1, "logo": "logo_soda.jpg" },
+        { "name": "Soda 2L", "price": 1, "logo": "logo_soda.jpg" },
+        { "name": "Sukita  1.5L", "price": 1, "logo": "logo_sukita.jpg" },
+        { "name": "Fusion 250 ml", "price": 1, "logo": "logo_fusion.png" },
+        { "name": "Fusion 2L", "price": 1, "logo": "logo_fusion.png" },
+        { "name": "Colorado Appia", "price": 1, "logo": "logo_colorado.jpg" },
+        { "name": "Colorado Berthô", "price": 1, "logo": "logo_colorado.jpg" }
     ]
 }

@@ -171,28 +171,30 @@ const Recommendation = () => {
                                         optionalWarning = <h3>Opcional</h3>;
                                     }
                                     return (
-                                        <div key={field.placeholder}>
+                                        <>
                                             {optionalWarning}
-                                            <div
-                                                key={field.placeholder}
-                                                className={styles.input}
-                                            >
-                                                <h4>{field.placeholder}</h4>
-                                                <input
-                                                    type={field.inputType}
-                                                    min={field.min}
-                                                    max={field.max}
-                                                    step={field.step}
-                                                    value={field.value}
-                                                    onChange={e =>
-                                                        valueChangeHandler(
-                                                            e,
-                                                            field.placeholder
-                                                        )
-                                                    }
-                                                />
+                                            <div key={field.placeholder}>
+                                                <div
+                                                    key={field.placeholder}
+                                                    className={styles.input}
+                                                >
+                                                    <h4>{field.placeholder}</h4>
+                                                    <input
+                                                        type={field.inputType}
+                                                        min={field.min}
+                                                        max={field.max}
+                                                        step={field.step}
+                                                        value={field.value}
+                                                        onChange={e =>
+                                                            valueChangeHandler(
+                                                                e,
+                                                                field.placeholder
+                                                            )
+                                                        }
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
+                                        </>
                                     );
                                 }
                                 return null;
