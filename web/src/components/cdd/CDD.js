@@ -11,7 +11,7 @@ const CDD = () => {
     const params = useParams();
     const [incomingBrews, setIncomingBrews] = useState([]);
     const [searchValue, setSearchValue] = useState('');
-    const [brews, setBrews] = useState(props.cdd.brews);
+    const [brews, setBrews] = useState(props.cdd.stock);
     const [catalog, setCatalog] = useState(Catalog.products);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const CDD = () => {
                 cddName: params.name
             });
             if (response.data.err === false) {
-                setIncomingBrews(response.data.brews);
+                setIncomingBrews(response.data.deliveries);
             }
         };
         fetchIncomingBrews();
@@ -63,7 +63,8 @@ const CDD = () => {
                             if (incomingBrews.length > 0) {
                                 incoming = incomingBrews.filter(
                                     incomingBrew =>
-                                        incomingBrew.brew.name === product.name
+                                        incomingBrew.product.name ===
+                                        product.name
                                 );
                             }
                             return (
@@ -83,7 +84,7 @@ const CDD = () => {
                         if (incomingBrews.length > 0) {
                             incoming = incomingBrews.filter(
                                 incomingBrew =>
-                                    incomingBrew.brew.name === product.name
+                                    incomingBrew.product.name === product.name
                             );
                         }
                         const available = brews.filter(

@@ -1,19 +1,27 @@
 {
     "products": [
-        { "name": "Budweiser 350 ml", "price": 1, "logo": "logo_budweiser.jpg" },
-        { "name": "Budweiser 473 ml", "price": 1, "logo": "logo_budweiser.jpg" },
-        { "name": "Budweiser 600 ml", "price": 1, "logo": "logo_budweiser.jpg" },
-        { "name": "Brahma Refresh 1L", "price": 1, "logo": "logo_brahmaref.jpg" },
-        { "name": "Brahma 0% 350 ml", "price": 1, "logo": "logo_brahma0.jpg" },
+        { "name": "Budweiser 350ml", "price": 1, "logo": "logo_budweiser.jpg" },
+        { "name": "Budweiser 473ml", "price": 1, "logo": "logo_budweiser.jpg" },
+        { "name": "Budweiser 600ml", "price": 1, "logo": "logo_budweiser.jpg" },
+        {
+            "name": "Brahma Refresh 1L",
+            "price": 1,
+            "logo": "logo_brahmaref.jpg"
+        },
+        { "name": "Brahma 0% 350ml", "price": 1, "logo": "logo_brahma0.jpg" },
         { "name": "Skol Pilsen 1L", "price": 1, "logo": "logo_skol.jpg" },
-        { "name": "Corona  355 ml", "price": 1, "logo": "logo_corona.jpg" },
-        { "name": "Stella Artois 550 ml", "price": 1, "logo": "logo_stella.jpg" },
-        { "name": "Baré  2L", "price": 1, "logo": "logo_bare.jpg" },
+        { "name": "Corona 355ml", "price": 1, "logo": "logo_corona.jpg" },
+        {
+            "name": "Stella Artois 550ml",
+            "price": 1,
+            "logo": "logo_stella.jpg"
+        },
+        { "name": "Baré 2L", "price": 1, "logo": "logo_bare.jpg" },
         { "name": "Pepsi 2L", "price": 1, "logo": "logo_pepsi.jpg" },
-        { "name": "Soda 350 ml", "price": 1, "logo": "logo_soda.jpg" },
+        { "name": "Soda 350ml", "price": 1, "logo": "logo_soda.jpg" },
         { "name": "Soda 2L", "price": 1, "logo": "logo_soda.jpg" },
-        { "name": "Sukita  1.5L", "price": 1, "logo": "logo_sukita.jpg" },
-        { "name": "Fusion 250 ml", "price": 1, "logo": "logo_fusion.png" },
+        { "name": "Sukita 1.5L", "price": 1, "logo": "logo_sukita.jpg" },
+        { "name": "Fusion 250ml", "price": 1, "logo": "logo_fusion.png" },
         { "name": "Fusion 2L", "price": 1, "logo": "logo_fusion.png" },
         { "name": "Colorado Appia", "price": 1, "logo": "logo_colorado.jpg" },
         { "name": "Colorado Berthô", "price": 1, "logo": "logo_colorado.jpg" }

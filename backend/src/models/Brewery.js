@@ -4,7 +4,7 @@ const BrewSchema = require('./utils/BrewSchema');
 
 const BrewerySchema = new Schema({
     name: String,
-    brewing: [
+    deliveries: [
         {
             dueDate: Date,
             brew: BrewSchema,

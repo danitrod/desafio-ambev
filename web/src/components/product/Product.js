@@ -4,6 +4,7 @@ import { formatDate } from '../../util/formatDate';
 import { formatPrice } from '../../util/formatPrice';
 
 const Product = props => {
+    console.log(props);
     let availability,
         style,
         stock,
@@ -25,8 +26,8 @@ const Product = props => {
                     {props.incoming.map(p => {
                         return (
                             <div key={p.dueDate}>
-                                {formatDate(p.dueDate)}- {p.brew.quantity}{' '}
-                                unidades
+                                {formatDate(p.dueDate)} - {p.product.quantity}{' '}
+                                unidades - de {p.from}
                             </div>
                         );
                     })}
