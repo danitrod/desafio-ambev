@@ -3,6 +3,7 @@ import api from '../../services/api';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Header from '../header/Header';
+import Form from '../pdvform/Pdvform.js';
 import DistributionIcon from '../../assets/icons/distribution.svg';
 import LoadingSpinner from '../../assets/loader.svg';
 import Banner from '../../assets/img/banner-2.jpg';
@@ -33,7 +34,7 @@ const App = () => {
 
     return (
         <>
-            <Header title='Centros de distribuição próximos' />
+            <Header title='Você está no restaurante Costela Dourada' />
             <img
                 className='banner'
                 src={Banner}
@@ -41,49 +42,59 @@ const App = () => {
             />
             <div className='container'>
                 <div className='form-cdds'>
-                    <div className='form'>
-                        <h1>aeee varze ooo</h1>
-                    </div>
-                    <div className='cdds'>
-                        <ul style={{ marginBottom: '28px' }}>
-                            {cdds.length > 0 ? (
-                                cdds.map(cdd => {
-                                    return (
-                                        <Link
-                                            key={cdd.cdd.name}
-                                            style={{
-                                                textDecoration: 'none',
-                                                color: '#000',
-                                                cursor: 'pointer',
-                                                margin: '12px'
-                                            }}
-                                            to={{
-                                                pathname: `/cdd/${cdd.cdd.name}`,
-                                                cdd: cdd.cdd
-                                            }}
-                                        >
-                                            <li>
-                                                <img
-                                                    src={DistributionIcon}
-                                                    alt='Distribuição'
-                                                />
-                                                <h4>{cdd.cdd.name}</h4>{' '}
-                                                <p>
-                                                    A {Math.round(cdd.distance)}
-                                                    km de distância
-                                                </p>
-                                            </li>
-                                        </Link>
-                                    );
-                                })
-                            ) : (
-                                <img src={LoadingSpinner} alt='loading' />
-                            )}
-                        </ul>
-                        <Link to='/venda' style={{ textDecoration: 'none' }}>
-                            <button className='orng'>Nova venda</button>
-                        </Link>
-                    </div>
+                    {cdds.length > 0 ? (
+                        <>
+                            <div className='form'>
+                                <h1>Verificação do ponto de venda</h1>
+                                <Form />
+                            </div>
+                            <div className='cdds'>
+                                <h1>Centros de distribuição próximos</h1>
+                                <ul style={{ marginBottom: '28px' }}>
+                                    {cdds.map(cdd => {
+                                        return (
+                                            <Link
+                                                key={cdd.cdd.name}
+                                                style={{
+                                                    textDecoration: 'none',
+                                                    color: '#000',
+                                                    cursor: 'pointer',
+                                                    margin: '12px'
+                                                }}
+                                                to={{
+                                                    pathname: `/cdd/${cdd.cdd.name}`,
+                                                    cdd: cdd.cdd
+                                                }}
+                                            >
+                                                <li>
+                                                    <img
+                                                        src={DistributionIcon}
+                                                        alt='Distribuição'
+                                                    />
+                                                    <h4>{cdd.cdd.name}</h4>{' '}
+                                                    <p>
+                                                        A{' '}
+                                                        {Math.round(
+                                                            cdd.distance
+                                                        )}
+                                                        km de distância
+                                                    </p>
+                                                </li>
+                                            </Link>
+                                        );
+                                    })}
+                                </ul>
+                                <Link
+                                    to='/venda'
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    <button className='orng'>Nova venda</button>
+                                </Link>
+                            </div>
+                        </>
+                    ) : (
+                        <img src={LoadingSpinner} alt='loading' />
+                    )}
                 </div>
                 <hr
                     style={{
@@ -91,7 +102,7 @@ const App = () => {
                         color: '#fff',
                         border: '1px solid #eee',
                         width: '75%',
-                        margin: '16px 0'
+                        margin: '32px 0'
                     }}
                 />
                 <h3 className='deliveryh'>Veículos para entrega próximos</h3>

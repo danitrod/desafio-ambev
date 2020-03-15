@@ -29,7 +29,7 @@ const CDD = () => {
     const searchHandler = e => {
         setSearchValue(e.target.value);
         setBrews(
-            props.cdd.brews.filter(product =>
+            props.cdd.stock.filter(product =>
                 product.name
                     .toLowerCase()
                     .includes(e.target.value.toLowerCase())

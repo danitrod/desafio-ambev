@@ -107,7 +107,6 @@ const Recommendation = () => {
                 ...values,
                 Perfil: perfil
             };
-            console.log(input);
             const response = await api.post('/recommend', input);
             if (response.data.err === false) {
                 setMixes(response.data.mixes);
@@ -171,7 +170,7 @@ const Recommendation = () => {
                                         optionalWarning = <h3>Opcional</h3>;
                                     }
                                     return (
-                                        <>
+                                        <div key={field.placeholder}>
                                             {optionalWarning}
                                             <div key={field.placeholder}>
                                                 <div
@@ -194,7 +193,7 @@ const Recommendation = () => {
                                                     />
                                                 </div>
                                             </div>
-                                        </>
+                                        </div>
                                     );
                                 }
                                 return null;
@@ -221,7 +220,7 @@ const Recommendation = () => {
                             return (
                                 <Mix
                                     key={mix.cdd}
-                                    products={mix.products}
+                                    products={mix.produtos}
                                     cdd={mix.cdd}
                                 />
                             );

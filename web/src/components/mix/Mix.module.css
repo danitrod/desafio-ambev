@@ -10,6 +10,10 @@
     margin-bottom: 32px;
 }
 
+.mix h2 {
+    margin: 16px 0;
+}
+
 .mix:hover {
     border: 1px solid rgb(13, 189, 13);
 }

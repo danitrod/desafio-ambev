@@ -4,7 +4,6 @@ import { formatDate } from '../../util/formatDate';
 import { formatPrice } from '../../util/formatPrice';
 
 const Product = props => {
-    console.log(props);
     let availability,
         style,
         stock,

@@ -10,15 +10,23 @@
 .form-cdds {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 100%;
 }
 
+.form-cdds h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
 .form {
-    width: 30%;
+    width: 40%;
     padding-right: 32px;
-    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cdds {
@@ -26,6 +34,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-left: 1px solid #eee;
+    padding-left: 32px;
 }
 
 .cdds h2 {
@@ -35,6 +45,7 @@
 .cdds ul {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .cdds li {

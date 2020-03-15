@@ -1,37 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Catalog from '../../constants/products.json';
 import { formatPrice } from '../../util/formatPrice';
 import styles from './Mix.module.css';
 
 const Mix = ({ products, cdd }) => {
-    const quantityInputHandler = (e, index) => {
-        products[index].quantity = e.target.value;
-    };
-
     let totalPrice = 0;
-    const productsTable = products.map((product, index) => {
+    const productsTable = Object.keys(products).map(product => {
+        if (products[product] === 0) {
+            return null;
+        }
         const [catalogProduct] = Catalog.products.filter(
-            catalogProduct => catalogProduct.name === product.name
+            catalogProduct => catalogProduct.name === product
         );
-        totalPrice += product.quantity * catalogProduct.price;
+        totalPrice += products[product] * catalogProduct.price;
         return (
             <>
                 <input type='checkbox' checked />
-                <input
-                    id={product.name}
-                    value={product.quantity}
-                    onChange={e => quantityInputHandler(e, index)}
-                    type='number'
-                />
-                <p>{product.name}</p>
+                <data>{products[product]}</data>
+                <p>{product}</p>
                 <p>{formatPrice(catalogProduct.price)}</p>
-                <p>{formatPrice(product.quantity * catalogProduct.price)}</p>
+                <p>{formatPrice(products[product] * catalogProduct.price)}</p>
             </>
         );
     });
     return (
         <div className={styles.mix} key={cdd}>
-            <h2>{cdd}</h2>
+            <h2>CDD {cdd}</h2>
             <div className={styles.data}>
                 <h5>Selecionado</h5>
                 <h5>Quantidade</h5>
