@@ -70,6 +70,7 @@ const Map = () => {
             >
                 {trucks.map(truck => (
                     <Marker
+                        key={truck.id}
                         latitude={truck.coords[0]}
                         longitude={truck.coords[1]}
                         offsetLeft={leftOffset}
@@ -85,9 +86,15 @@ const Map = () => {
             </ReactMapGL>
             <div className={styles.side + ' ' + sidePanelInfo.style}>
                 <h3>Entrega {sidePanelInfo.id}</h3>
-                <p>De {sidePanelInfo.from}</p>
-                <p>Para {sidePanelInfo.to}</p>
-                <p>{sidePanelInfo.remaining} estimados</p>
+                <p>
+                    De <strong>{sidePanelInfo.from}</strong>
+                </p>
+                <p>
+                    Para <strong>{sidePanelInfo.to}</strong>
+                </p>
+                <p>
+                    <strong>{sidePanelInfo.remaining}</strong> estimados
+                </p>
             </div>
         </div>
     );

@@ -92,7 +92,13 @@ const App = () => {
                             </div>
                         </>
                     ) : (
-                        <img src={LoadingSpinner} alt='loading' />
+                        <div className='loading'>
+                            <img src={LoadingSpinner} alt='loading' />
+                            <p>
+                                Você precisa habilitar o uso de GPS para usar o
+                                app.
+                            </p>
+                        </div>
                     )}
                 </div>
                 <hr

@@ -1,10 +1,16 @@
-.header h1 {
-    font-style: 32px;
-    color: #eee;
-}
-
 .banner {
     width: 100%;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading p {
+    font-style: italic;
 }
 
 .form-cdds {
