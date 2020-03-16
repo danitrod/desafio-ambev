@@ -5,7 +5,10 @@
     "license": "MIT",
     "scripts": {
         "start": "node index.js",
-        "dev": "nodemon index.js"
+        "dev": "nodemon index.js",
+        "build": "rm -rf build && cd ../web && yarn build && mv build ../backend",
+        "push": "ibmcloud cf push",
+        "deploy": "yarn build && yarn push"
     },
     "dependencies": {
         "axios": "^0.19.2",
