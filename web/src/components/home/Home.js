@@ -7,8 +7,7 @@ import Form from '../pdvform/Pdvform.js';
 import DistributionIcon from '../../assets/icons/distribution.svg';
 import LoadingSpinner from '../../assets/loader.svg';
 import Banner from '../../assets/img/banner-2.jpg';
-import MapImg from '../../assets/img/map.png';
-import DeliveryStatus from '../../assets/img/delivery.png';
+import Map from '../map/Map';
 
 const App = () => {
     const [cdds, setCdds] = useState([]);
@@ -105,14 +104,19 @@ const App = () => {
                         margin: '32px 0'
                     }}
                 />
-                <h3 className='deliveryh'>Veículos para entrega próximos</h3>
                 <div className='map-view'>
-                    <img className='map' src={MapImg} alt='map' />
-                    <img
-                        className='status'
-                        src={DeliveryStatus}
-                        alt='delivery'
-                    />
+                    {
+                        <>
+                            <h3 className='deliveryh'>
+                                Veículos para entrega próximos
+                            </h3>
+                            <p>
+                                Clique em um veículo para obter informações
+                                sobre a entrega
+                            </p>
+                            <Map />
+                        </>
+                    }
                 </div>
             </div>
         </>

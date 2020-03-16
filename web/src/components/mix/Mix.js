@@ -16,9 +16,9 @@ const Mix = ({ products, cdd }) => {
         return (
             <>
                 <input type='checkbox' checked />
-                <data>{products[product]}</data>
                 <p>{product}</p>
                 <p>{formatPrice(catalogProduct.price)}</p>
+                <data>{products[product]}</data>
                 <p>{formatPrice(products[product] * catalogProduct.price)}</p>
             </>
         );
@@ -28,9 +28,9 @@ const Mix = ({ products, cdd }) => {
             <h2>CDD {cdd}</h2>
             <div className={styles.data}>
                 <h5>Selecionado</h5>
-                <h5>Quantidade</h5>
                 <h5>Produto</h5>
                 <h5>Preço/unidade</h5>
+                <h5>Quantidade</h5>
                 <h5>Subtotal</h5>
                 {productsTable}
             </div>

@@ -21,3 +21,9 @@
     gap: 40px;
     list-style-type: none;
 }
+
+@media only screen and (max-width: 600px) {
+    .catalog ul {
+        grid-template-columns: 1fr;
+    }
+}

@@ -82,3 +82,17 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form {
+        padding: 0;
+        width: auto;
+        border: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 16px;
+    }
+}

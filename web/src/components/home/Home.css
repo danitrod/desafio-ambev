@@ -84,23 +84,40 @@
     font-size: 22px;
     font-weight: 500;
     color: #000;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .map-view {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.map {
-    outline: 1px solid rgb(214, 81, 1);
-    width: 50%;
-    margin-right: 1px;
+.map-view p {
+    margin-bottom: 6px;
+    font-style: italic;
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
 }
 
 .status {
     width: 25%;
+}
+
+@media only screen and (max-width: 600px) {
+    .form-cdds {
+        flex-direction: column;
+    }
+    .form {
+        padding: 0 0 16px;
+        width: auto;
+    }
+    .cdds {
+        padding: 16px 0 0;
+        border: none;
+        border-top: 1px solid #eee;
+    }
 }
