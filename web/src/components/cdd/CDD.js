@@ -11,8 +11,12 @@ const CDD = () => {
     const params = useParams();
     const [incomingBrews, setIncomingBrews] = useState([]);
     const [searchValue, setSearchValue] = useState('');
-    const [brews, setBrews] = useState(props.cdd.stock);
-    const [catalog, setCatalog] = useState(Catalog.products);
+    const [brews, setBrews] = useState(
+        props.cdd.stock.sort((a, b) => (a.name > b.name ? 1 : -1))
+    );
+    const [catalog, setCatalog] = useState(
+        Catalog.products.sort((a, b) => (a.name > b.name ? 1 : -1))
+    );
 
     useEffect(() => {
         const fetchIncomingBrews = async () => {

@@ -1,0 +1,1 @@
+export const SET_NEAREST_CDD = 'SET_NEAREST_CDD';

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
+import { useSelector } from 'react-redux';
 import styles from './Recommendation.module.css';
 import Header from '../header/Header';
 import Mix from '../mix/Mix';
@@ -8,6 +9,9 @@ import { formatDate2 } from '../../util/formatDate';
 const Recommendation = () => {
     const [values, setValues] = useState({});
     const [mixes, setMixes] = useState([]);
+    const nearestCdd = useSelector(state => {
+        return state.nearestCdd.cdd;
+    });
 
     const formFields = [
         {
@@ -95,27 +99,24 @@ const Recommendation = () => {
     const buttonClickHandler = e => {
         e.preventDefault();
         const fetchMixes = async () => {
-            let perfil;
-            if (values.Perfil === 'Baixo') {
-                perfil = 1;
-            } else if (values.Perfil === 'Médio') {
-                perfil = 2;
-            } else {
-                perfil = 3;
-            }
             const input = {
                 ...values,
-                Perfil: perfil
+                stock: nearestCdd.stock
             };
             const response = await api.post('/recommend', input);
             if (response.data.err === false) {
-                setMixes(response.data.mixes);
+                setMixes([
+                    { cdd: nearestCdd.name, products: response.data.mix }
+                ]);
+            } else {
+                console.error(response.data.msg);
             }
         };
         fetchMixes();
     };
 
     const valueChangeHandler = (e, v) => {
+        setMixes([]);
         let newValue = values;
         newValue[v] = e.target.value;
         setValues(newValue);
@@ -170,7 +171,7 @@ const Recommendation = () => {
                                         optionalWarning = <h3>Opcional</h3>;
                                     }
                                     return (
-                                        <div key={field.placeholder}>
+                                        <>
                                             {optionalWarning}
                                             <div key={field.placeholder}>
                                                 <div
@@ -193,7 +194,7 @@ const Recommendation = () => {
                                                     />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </>
                                     );
                                 }
                                 return null;
@@ -220,7 +221,7 @@ const Recommendation = () => {
                             return (
                                 <Mix
                                     key={mix.cdd}
-                                    products={mix.produtos}
+                                    products={mix.products}
                                     cdd={mix.cdd}
                                 />
                             );

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
+import { useDispatch } from 'react-redux';
+import { setNearsetCdd } from '../../redux/actions/index';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Header from '../header/Header';
@@ -10,6 +12,7 @@ import Banner from '../../assets/img/banner-2.jpg';
 import Map from '../map/Map';
 
 const App = () => {
+    const dispatch = useDispatch();
     const [cdds, setCdds] = useState([]);
 
     useEffect(() => {
@@ -22,6 +25,7 @@ const App = () => {
                     console.error('Cannot fetch cdds: ', response.data.msg);
                 } else {
                     setCdds(response.data.cdds);
+                    dispatch(setNearsetCdd(response.data.cdds[0]));
                 }
             },
             err => {
@@ -29,7 +33,7 @@ const App = () => {
             },
             {}
         );
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

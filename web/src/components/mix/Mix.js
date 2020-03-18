@@ -24,7 +24,7 @@ const Mix = ({ products, cdd }) => {
         );
     });
     return (
-        <div className={styles.mix} key={cdd}>
+        <div className={styles.mix}>
             <h2>CDD {cdd}</h2>
             <div className={styles.data}>
                 <h5>Selecionado</h5>
