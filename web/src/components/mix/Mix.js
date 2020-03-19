@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Catalog from '../../constants/products.json';
+import Modal from '../modal/Modal';
 import { formatPrice } from '../../util/formatPrice';
 import styles from './Mix.module.css';
 
 const Mix = ({ products, cdd }) => {
     let totalPrice = 0;
+    const [showModal, setShowModal] = useState(false);
+
+    const showModalHandler = () => {
+        setShowModal(true);
+    };
+
+    const cancelModalHandler = () => {
+        setShowModal(false);
+    };
+
     const productsTable = Object.keys(products).map(product => {
         if (products[product] === 0) {
             return null;
@@ -23,8 +34,21 @@ const Mix = ({ products, cdd }) => {
             </>
         );
     });
+
+    let modal = null;
+    if (showModal === true) {
+        modal = (
+            <Modal
+                title='Pedido concluído!'
+                description={`Custo total: ${formatPrice(totalPrice)}`}
+                cancel={cancelModalHandler}
+            />
+        );
+    }
+
     return (
         <div className={styles.mix}>
+            {modal}
             <h2>CDD {cdd}</h2>
             <div className={styles.data}>
                 <h5>Selecionado</h5>
@@ -35,7 +59,7 @@ const Mix = ({ products, cdd }) => {
                 {productsTable}
             </div>
             <h3>Total {formatPrice(totalPrice)}</h3>
-            <button>Fazer pedido</button>
+            <button onClick={showModalHandler}>Fazer pedido</button>
         </div>
     );
 };

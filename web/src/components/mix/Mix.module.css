@@ -28,6 +28,14 @@
     background-color: rgb(13, 189, 13);
 }
 
+.mix button:hover {
+    background-color: rgb(23, 199, 23);
+}
+
+.mix button:active {
+    background-color: rgb(0, 169, 0);
+}
+
 .data {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
