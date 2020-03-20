@@ -8,7 +8,9 @@
         "dev": "nodemon index.js",
         "build": "rm -rf build && cd ../web && yarn build && mv build ../backend",
         "push": "ibmcloud cf push",
-        "deploy": "yarn build && yarn push"
+        "deploy": "yarn build && yarn push",
+        "install-deps": "npm i && cd ../web && npm i",
+        "install-yarn": "yarn && cd ../web && yarn"
     },
     "dependencies": {
         "axios": "^0.19.2",
@@ -19,7 +21,6 @@
         "mongoose": "^5.9.3"
     },
     "devDependencies": {
-        "cors": "^2.8.5",
         "nodemon": "^2.0.2"
     }
 }
