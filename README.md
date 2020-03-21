@@ -26,6 +26,7 @@ O catálogo de produtos e preços, bem como os locais dos centros de distribuiç
 -   [x] Uso de características do PDV para recomendação de produtos
 -   [ ] Uso de tipo de estabelecimento para recomendação de produtos
 -   [ ] Uso de dados de veículos próximos para calcular tempo de entrega
+-   [ ] Agendamento de entregas futuras de acordo com entregas da fábrica
 -   [x] Versão web do app
 -   [ ] Versão mobile do app
 
